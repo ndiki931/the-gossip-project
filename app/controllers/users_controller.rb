@@ -18,11 +18,6 @@ class UsersController < ApplicationController
     
     
    	if @user.save
-      if params[:accept] =="1"
-        remember_in(@user)
-      else
-        forget(@user)
-      end
     	redirect_to new_session_path
    	else 
      render 'new'

@@ -63,7 +63,7 @@
   <% else%>
   <% end %><br>
 
-	<center><div class="mt-5">
+	<center><div class="mt-5 mb-5">
 	<h2><strong>S'inscrire</strong></h2><br/>
 
 	<%= form_tag url_for(action: 'create'), method: "post" do %>
@@ -89,12 +89,9 @@
 
     <%= label_tag 'Password confirmation :' %>
     <%= text_field_tag 'password_confirmation'%>
-  </br>
+  <br></br>
 
-    <%= check_box_tag 'accept'%>
-      <label class="form-check-label" for="exampleCheck1"><strong>Remember me on this computer</strong></label><br>
-
-    <button type="submit_tag" class="btn btn-primary" style="margin-left: 300px">Sign up</button>
+    <button type="submit_tag" class="btn btn-primary" style="width: 300px">Sign up</button>
   <div></center> 
  <% end %>
 
