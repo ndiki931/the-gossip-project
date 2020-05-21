@@ -1,0 +1,116 @@
+<html>
+  <head>
+  </head>
+  
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="<%=gossips_path%>">GossipProject</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="<%=team_path%>">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=contact_path%>">Contact</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
+
+    <% if current_user %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link btn btn-info" href="<%=session_path(session[:user_id])%>" data-method="DELETE">Deconnexion</a>
+        </li>
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.first_name%></a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Editer profil</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Deconnexion else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+   <% else %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link btn btn-info dropdown-toggle active" href="<%=new_user_path%>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+                Signup
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Ma session</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+    </div>
+  <% end %>
+
+  </nav><br>
+
+  <% if flash[:danger] %>
+    <div class="container" style="...">
+      <div class="alert alert-danger"><%=flash[:danger]%></div>
+    </div>
+  <% end %>
+
+
+  <% if flash.now[:message]%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <h4  class="alert-heading"><strong>Nous n'avons pas réussi à te connecter pour la (ou les) raison(s) suivante(s) :</strong></h4>
+        <p class="mb-0">
+          <ul>
+            <li><%=flash.now[:message]%></li>
+          </ul>
+        </p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  <% end %>
+
+
+	<center><div style="margin-top: 90px">
+	 <h2 class= "mb-4" ><strong>Se connecter</strong></h2>
+
+	 <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <%= label_tag 'Email :' %>
+    <%= text_field_tag 'email'%>
+    <br/> <br/>
+
+    <%= label_tag 'Password :' %>
+    <%= text_field_tag 'password'%>
+    <br>
+
+    <%= check_box_tag 'accept'%>
+      <label class="form-check-label" for="exampleCheck1"><strong>Remember me on this computer</strong></label><br></br>
+
+    <button type="submit_tag" class="btn btn-primary">Connexion</button></br>
+    <p>New user? <%= link_to "Sign up now!", new_user_path%></p>
+  <% end %>
+
+  </div></center>
+
+
+ </body>
+</html>
+

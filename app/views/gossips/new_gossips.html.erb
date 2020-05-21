@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="<%=gossips_path%>">GossipProject</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=home_path%>">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=team_path%>">Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=contact_path%>">Contact</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+    <h1>Crée un potin !</h1>
+    <p>Balance ton potin via le formulaire ci-dessous</p>
+    <form action='/gossips/new' method='POST'>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      Saisi ici ton prénom :    <input type='text' name='gossip_author_first_name'/><br/>
+      Saisi ici ton nom :       <input type='text' name='gossip_author_last_name'/><br/>
+      Balance le titre de ton potin : <input type='text' name='gossip_title'/><br/>
+      Balance le contenu de ton potin : <input type='text' name='gossip_content'/><br/>
+      <input type='submit' value='Submit'/>
+    </form>
+  </body>
+</html>
+
+
+
