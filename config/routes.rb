@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   
 	get '/team', to: 'team#team_presentation'
 
+	get '/', to: 'gossips#index'
+
 	#get '/gossips/new', to: 'gossips#new_gossips'
 
 	#post '/gossips/new', to: 'gossips#save_gossips'
