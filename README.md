@@ -37,3 +37,8 @@ To run the project, follow these steps :
 ## Test via Rails console
 
 launch command 'rails console --sandbox' or 'rails console' via the terminal to make any test for better understanding
+
+## Last but not least
+. Session and Cookies are used for user authentication
+. Gem bcrypt has beeing used for stocking password privately into database
+
