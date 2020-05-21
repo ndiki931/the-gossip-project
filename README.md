@@ -29,16 +29,17 @@ To install the project, follow these steps :
 ## Run
 
 To run the project, follow these steps :
-1. Use command 'rails db:migrate' to create the database
-2. Use command 'rails server' to active the server in local
-3. enter the URL path 'http://localhost:3000/gossips" into your web browser which is the project's homepage
+1. Use command ' rails db:migrate ' to create the database
+2. Use command ' rails server ' to active the server in local
+3. enter the URL path ' http://localhost:3000/gossips ' into your web browser which is the project's homepage
 4. enjoy navigation !!
 
 ## Test via Rails console
 
-launch command 'rails console --sandbox' or 'rails console' via the terminal to make any test for better understanding
+launch command ' rails console --sandbox ' or ' rails console ' via the terminal to make any test for better understanding
 
 ## Last but not least
 . Session and Cookies are used for user authentication
+
 . Gem bcrypt has beeing used for stocking password privately into database
 
