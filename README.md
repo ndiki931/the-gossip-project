@@ -7,19 +7,22 @@ application up and running.
 ## Specs
 
 . Ruby version : 2.5.1
+
 . PostgreSQL version : 9.5
+
 . Rails version : Rails 5.2.4.2
 
 ## Database
 
 . PostgreSQL
+
 . Tables : gossips, users
 
 ## Installation
 
 To install the project, follow these steps :
 
-1. Use command git clone to clone the project on your environnment or 'Download Repository'
+1. Use command 'git clone' to clone the project on your environnment or 'Download Repository'
 2. Use command 'cd' to go in the project's repository
 3. Use command 'bundle install' to install all the gem dependencies
 
