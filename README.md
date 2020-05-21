@@ -3,22 +3,34 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## Specs
 
-* System dependencies
+. Ruby version : 2.5.1
+. PostgreSQL version : 9.5
+. Rails version : Rails 5.2.4.2
 
-* Configuration
+## Database
 
-* Database creation
+. PostgreSQL
+. Tables : gossips, users
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+To install the project, follow these steps :
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Use command git clone to clone the project on your environnment or 'Download Repository'
+2. Use command 'cd' to go in the project's repository
+3. Use command 'bundle install' to install all the gem dependencies
 
-* Deployment instructions
+## Run
 
-* ...
+To run the project, follow these steps :
+1. Use command 'rails db:migrate' to create the database
+2. Use command 'rails server' to active the server in local
+3. enter the URL path 'http://localhost:3000/gossips" into your web browser which is the project's homepage
+4. enjoy !!
+
+## Test via Rails console
+
+launch command 'rails console --sandbox' or 'rails console' via the terminal to make any test for better understanding
